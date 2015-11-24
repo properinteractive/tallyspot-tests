@@ -1,0 +1,14 @@
+{
+  "name": "tallyspot-tests",
+  "version": "1.0.0",
+  "description": "automated browser tests for tallyspot",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "Ryan Watkins-Hughes <ryanwhs@properinteractive.com> (http://www.properinteractive.com)",
+  "license": "ISC",
+  "devDependencies": {
+    "dalekjs": "0.0.9"
+  }
+}
