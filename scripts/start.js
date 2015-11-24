@@ -5,7 +5,7 @@ module.exports = {
   test
     .open(config.url)
     .submit('#start')
-    .assert.url('http://beta.tallyspot.com/create', 'URL is as expected')
+    .assert.url(config.beta_url + 'create', 'URL is as expected')
     .done();
   }
 };

@@ -1,3 +1,4 @@
 module.exports = {
-  'url': 'http://beta.tallyspot.com/'
+  'url': 'http://tallyspot.com/',
+  'beta_url': 'http://beta.tallyspot.com/'
 }
