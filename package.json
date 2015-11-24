@@ -4,12 +4,13 @@
   "description": "automated browser tests for tallyspot",
   "main": "index.js",
   "scripts": {
-    "test": "dalek ./scripts/*.js -r console,html"
+    "test": "dalek ./scripts/*.js -r console,html,json"
   },
   "author": "Ryan Watkins-Hughes <ryanwhs@properinteractive.com> (http://www.properinteractive.com)",
   "license": "ISC",
   "devDependencies": {
     "dalek-reporter-html": "0.0.4",
+    "dalek-reporter-json": "0.0.2",
     "dalekjs": "0.0.9"
   }
 }

@@ -1,4 +1,7 @@
 module.exports = {
-  'url': 'http://tallyspot.com/',
-  'beta_url': 'http://beta.tallyspot.com/'
+  'url': {
+    'prod': 'http://tallyspot.com/',
+    'staging': 'http://staging.tallyspot.com/',
+    'beta': 'http://beta.tallyspot.com/'
+  }
 }

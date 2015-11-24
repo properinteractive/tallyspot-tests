@@ -1,9 +1,11 @@
 const config = require('../config.js');
 
 module.exports = {
-'Page title is correct for Production': function (test) {
+'Staging is up and running': function (test) {
+  const url = config.url.staging
   test
-    .open(config.url.prod)
+    .open(url)
+    .assert.url(url, 'URL is as expected')
     .assert.title().is('tallyspot', 'It has title')
     .done();
   }
