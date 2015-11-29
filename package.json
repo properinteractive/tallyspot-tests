@@ -4,7 +4,8 @@
   "description": "automated browser tests for tallyspot",
   "main": "index.js",
   "scripts": {
-    "test": "dalek ./scripts/*.js -r console,html,json"
+    "test": "dalek ./scripts/*.js -r console,html,json",
+    "lint": "eslint ."
   },
   "author": "Ryan Watkins-Hughes <ryanwhs@properinteractive.com> (http://www.properinteractive.com)",
   "license": "ISC",

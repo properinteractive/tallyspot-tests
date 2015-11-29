@@ -4,4 +4,4 @@ module.exports = {
     'staging': 'http://staging.tallyspot.com/',
     'beta': 'http://beta.tallyspot.com/'
   }
-}
+};
