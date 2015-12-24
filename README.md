@@ -15,7 +15,7 @@ npm install -g eslint-config-airbnb eslint babel-eslint
 
 ###Run tests
 
-`npm install dalek-cli -g`
+`npm install -g dalek-cli`
 
 `npm install`
 

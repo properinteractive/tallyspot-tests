@@ -2,16 +2,14 @@
   "name": "tallyspot-tests",
   "version": "1.0.0",
   "description": "automated browser tests for tallyspot",
-  "main": "index.js",
+  "repository": "https://github.com/properinteractive/tallyspot-tests",
   "scripts": {
-    "test": "dalek ./scripts/*.js -r console,html,json",
+    "test": "node nightwatch.js",
     "lint": "eslint ."
   },
   "author": "Ryan Watkins-Hughes <ryanwhs@properinteractive.com> (http://www.properinteractive.com)",
   "license": "ISC",
   "devDependencies": {
-    "dalek-reporter-html": "0.0.4",
-    "dalek-reporter-json": "0.0.2",
-    "dalekjs": "0.0.9"
+    "nightwatch": "^0.8.9"
   }
 }

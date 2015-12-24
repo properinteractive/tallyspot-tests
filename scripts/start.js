@@ -1,12 +1,12 @@
 const config = require('../config.js');
 
 module.exports = {
-  '"Start" form works properly': function testStartForm(test) {
+  '"Start" form works properly': function testStartForm(browser) {
     const url = config.url.staging;
-    test
-    .open(url)
-    .submit('#start')
-    .assert.url(url + 'create', 'URL is as expected')
-    .done();
+    browser
+      .url(url)
+      .submitForm('#start')
+      .assert.urlEquals(url + 'create')
+      .end();
   }
 };

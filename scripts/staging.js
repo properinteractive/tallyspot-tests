@@ -1,12 +1,13 @@
 const config = require('../config.js');
 
 module.exports = {
-  'Staging is up and running': function testStaging(test) {
+  'Staging is up and running': function testStaging(browser) {
     const url = config.url.staging;
-    test
-    .open(url)
-    .assert.url(url, 'URL is as expected')
-    .assert.title().is('tallyspot', 'Title is as expected')
-    .done();
+    browser
+      .url(url)
+      .pause(3000)
+      .assert.urlEquals(url)
+      .assert.title('tallyspot')
+      .end();
   }
 };
