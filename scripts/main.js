@@ -7,7 +7,7 @@ module.exports = {
     browser
     // Open the /create url
     .url(url + 'create')
-    // Let's choose a date in the past and test that creating the tally fails
+    // Let's choose a date in the past and make sure that creating the tally fails
     .execute(function choosePastDate() {
       const selected = document.querySelector('[name="hour"]').selectedIndex;
       document.querySelector('[name="hour"] option:nth-of-type(' + selected + ')').selected = true;
@@ -19,16 +19,15 @@ module.exports = {
     .assert.urlContains('create')
     // and are prompted to use a date and time in the future
     .assert.containsText('.messages', 'Please choose a date and time in the future!')
-    // Choose a valid date
+    // Choose a valid date in the future
     .execute(function chooseDate() {
-      const updated = document.querySelector('[name="hour"]').selectedIndex + 2;
-      document.querySelector('[name="hour"] option:nth-of-type(' + updated + ')').selected = true;
+      const tomorrow = document.querySelector('[name="date"]').selectedIndex + 2;
+      document.querySelector('[name="date"] option:nth-of-type(' + tomorrow + ')').selected = true;
     })
     // Submit the create form again with a accepted event time
     .submitForm('#create')
     .pause(3000)
     // Since the url is generated randomly, let's test the content of the page to make sure we're in the right place
-    .assert.containsText('.app div.help', 'Start by adding up to three locations for friends to vote on')
     .assert.containsText('#add-option a.inline', 'Add +')
     // Fill out the first option and submit
     .setValue('#autocomplete', 'Test One')
@@ -59,7 +58,7 @@ module.exports = {
     // Refresh browser and then...
     .refresh()
     // select the first option and attempt to vote again
-    .click('.leaderboard i.option:nth-of-type(1) a')
+    .click('.leaderboard li.option:nth-of-type(1) a')
     .assert.elementNotPresent('button.vote')
     .assert.containsText('.leaderboard + .help', 'Hey now, you\'ve already voted.')
     // Remove the selected option
@@ -78,7 +77,7 @@ module.exports = {
     .click('.leaderboard + .help a')
     .pause(3000)
     // Check that the url updated properly
-    .assert.url().to.contain('deadline', 'url contains \'deadline\' as expected')
+    .assert.urlContains('deadline')
     // Check the value of the [name="date"] select
     .assert.containsText('select[name="date"] option:nth-of-type(1)', 'Today')
     // Set the deadline for voting to tomorrow
@@ -88,7 +87,6 @@ module.exports = {
     // Click the 'Save' button
     .click('form#deadline button')
     .pause(3000)
-
     .end();
   }
 };
