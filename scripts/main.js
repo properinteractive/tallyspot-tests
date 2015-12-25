@@ -19,10 +19,9 @@ module.exports = {
     .assert.urlContains('create')
     // and are prompted to use a date and time in the future
     .assert.containsText('.messages', 'Please choose a date and time in the future!')
-    // Choose a valid date in the future
+    // Choose a valid date tomorrow
     .execute(function chooseDate() {
-      const tomorrow = document.querySelector('[name="date"]').selectedIndex + 2;
-      document.querySelector('[name="date"] option:nth-of-type(' + tomorrow + ')').selected = true;
+      document.querySelector('[name="date"] option:nth-of-type(2)').selected = true;
     })
     // Submit the create form again with a accepted event time
     .submitForm('#create')
